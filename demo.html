@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tavoos Player - DEMO</title>
+    <script>
+        (function () {
+            var init = function () {
+                !function (e, f, u) {
+                    window.vplyr = window.vplyr || [];
+                    var dateTimeNow = new Date();
+                    var version = dateTimeNow.getFullYear().toString() +
+                        '0' + dateTimeNow.getMonth() +
+                        '0' + dateTimeNow.getDate() +
+                        '0' + dateTimeNow.getHours();
+                    vplyr['version'] = version;
+                    e.async = true;
+                    e.src = u + "?v=" + version;
+                    f.parentNode.insertBefore(e, f);
+                }(document.createElement('script'),
+                    document.getElementsByTagName('script')[0],
+                    'loader.min.js');
+            };
+            init();
+        }());
+    </script>
+</head>
+<body>
+<div id="vplyr-container"></div>
+<script type="text/javascript">
+    window.vplyr = window.vplyr || [];
+    vplyr['option'] = {
+        video_element_id: 'vplyr-container',
+        publisherSiteId: '78821198-e29b-49e2-afb1-b5f698ef02a1',
+        vast: {
+            url: 'file:///var/www/player/xml/NonLinear.xml',
+        },
+        poster: '',
+        videos: [{
+            'src': '',
+            'title': '360Q'
+        }]
+    };
+</script>
+</body>
+</html>
